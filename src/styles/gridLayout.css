@@ -1,0 +1,112 @@
+.parentGrid1 {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 24px 16px 48px;
+  gap: 16px;
+  -webkit-box-align: start;
+  align-items: start;
+}
+.link:hover h2 {
+  text-decoration: underline;
+}
+.firstTwoCol {
+  display: grid;
+  box-sizing: border-box;
+  -webkit-box-align: start;
+  align-items: start;
+}
+.firstColBox {
+  border-bottom: 1px solid rgb(230, 232, 234);
+  padding-bottom: 16px;
+  transition: opacity 0.2s ease-in-out;
+  grid-auto-rows: auto auto 1fr auto;
+  position: relative;
+  display: grid;
+  opacity: 1;
+}
+.firstColBoxContent {
+  gap: 12px;
+  display: grid;
+  padding-top: 8px;
+}
+.firstColBox > img,
+.secondColBox > img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.firstColBoxContent > h2 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: -0.36px;
+}
+.firstColBoxContent > p,
+.secondColBox > p,
+.thirdColBox > p {
+  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  max-height: calc(18px * 4);
+  width: 100%;
+}
+.secondColBox {
+  grid-template-columns: 1fr;
+  background-color: transparent;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+  gap: 16px;
+  display: grid;
+}
+.secondColBox > h2 {
+  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 32px;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: -0.56px;
+  overflow-wrap: anywhere;
+}
+.thirdCol {
+  display: grid;
+}
+.thirdColBox {
+  border-bottom: 1px solid rgb(230, 232, 234);
+  position: relative;
+  gap: 8px;
+  display: grid;
+}
+.thirdColBox > h2 {
+  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: -0.36px;
+}
+
+@media screen and (max-width: 8172px) {
+  .firstTwoCol {
+    grid-template-columns: 1fr 2fr;
+    gap: 16px;
+  }
+  .firstCol {
+    display: grid;
+    gap: 16px;
+  }
+  .thirdCol {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+}

@@ -98,7 +98,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`p-2 rounded-full transition-colors`}
           >
-            {darkMode ? (
+            {!darkMode ? (
               <svg
                 className="fill-yellow-400"
                 fill="currentColor"

@@ -1,0 +1,39 @@
+.parentGrid8 {
+  display: grid;
+  box-sizing: border-box;
+  gap: 16px;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  margin: 16px;
+}
+.gridContent {
+  grid-template-columns: 38px 1fr;
+  gap: 8px;
+  display: grid;
+}
+.gridContent > span {
+  color: rgb(138, 140, 142);
+  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 34px;
+  letter-spacing: -0.64px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  height: 34px;
+  width: 38px;
+}
+.gridContent > h2 {
+  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: none;
+  text-decoration: none;
+  letter-spacing: -0.32px;
+}
