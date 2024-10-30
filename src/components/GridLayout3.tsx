@@ -22,7 +22,7 @@ const GridLayout3 = ({ news }) => {
         <Image src={news.image_url} alt={news.title} width={500} height={250} />
         <div className="mainGridContent">
           <h2>{news.title}</h2>
-          <p className="text-[#313942] dark:text-[#E3E3E3]">
+          <p className="text-[#313942] dark:text-[#e3e3e3b8]">
             {news.description}
           </p>
           <Link

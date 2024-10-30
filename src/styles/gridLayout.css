@@ -29,28 +29,18 @@
   display: grid;
   padding-top: 8px;
 }
-.firstColBox > img,
-.secondColBox > img {
-  width: 100%;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-}
+
 .firstColBoxContent > h2 {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: clamp(14px, 3vw, 18px);
+  line-height: clamp(16px, 4vw, 22px);
   text-transform: none;
   text-decoration: none;
-  letter-spacing: -0.36px;
 }
 .firstColBoxContent > p,
 .secondColBox > p,
 .thirdColBox > p {
-  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 1px;
+  font-size: clamp(12px, 3vw, 16px);
+  line-height: clamp(14px, 4vw, 18px);
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -68,13 +58,10 @@
   display: grid;
 }
 .secondColBox > h2 {
-  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 32px;
+  font-size: clamp(20px, 5vw, 28px);
+  line-height: clamp(24px, 5vw, 32px);
   text-transform: none;
   text-decoration: none;
-  letter-spacing: -0.56px;
   overflow-wrap: anywhere;
 }
 .thirdCol {
@@ -87,13 +74,10 @@
   display: grid;
 }
 .thirdColBox > h2 {
-  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: clamp(14px, 3vw, 18px);
+  line-height: clamp(18px, 4vw, 22px);
   text-transform: none;
   text-decoration: none;
-  letter-spacing: -0.36px;
 }
 
 @media screen and (max-width: 8172px) {
@@ -107,6 +91,45 @@
   }
   .thirdCol {
     grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .parentGrid1 {
+    grid-template-columns: 1fr;
+  }
+  .firstTwoCol {
+    grid-template-columns: 1fr;
+  }
+  .firstCol {
+    order: 2;
+  }
+  .firstColBox {
+    grid-template-columns: 132px auto;
+    gap: 8px;
+  }
+  .firstColBox > img {
+    height: auto;
+  }
+  .firstColBoxContent {
+    padding: 0;
+  }
+
+  .secondColBox {
+    order: 1;
+    margin: 0 -16px;
+  }
+  .secondColBox > h2,
+  .secondColBox > p {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 849px) {
+  .parentGrid1 {
+    grid-template-columns: 3fr;
+  }
+  .thirdCol {
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }

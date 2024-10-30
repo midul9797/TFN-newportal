@@ -18,21 +18,15 @@
   padding-top: 8px;
 }
 .gridColContent6 h2 {
-  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: clamp(14px, 5vw, 18px);
+  line-height: clamp(18px, 5vw, 22px);
   text-transform: none;
   text-decoration: none;
-  letter-spacing: -0.36px;
   margin-top: 20px;
 }
 .gridColContent6 p {
-  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 1px;
+  font-size: clamp(10px, 5vw, 14px);
+  line-height: clamp(14px, 5vw, 18px);
 
   overflow: hidden;
   display: -webkit-box;
@@ -40,4 +34,36 @@
   -webkit-line-clamp: 4;
   max-height: calc(18px * 4);
   width: 100%;
+}
+@media screen and (max-width: 599px) {
+  .parentGrid6 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .gridCol6 {
+    grid-template-columns: 132px auto;
+    gap: 8px;
+  }
+  .gridCol6 > img {
+    height: auto;
+  }
+  .gridColContent6,
+  .gridColContent6 h2 {
+    padding: 0;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 849px) {
+  .parentGrid6 {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .gridCol6 {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .gridColContent6 {
+    padding: 0 8px;
+    margin: 0;
+  }
 }

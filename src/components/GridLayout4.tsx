@@ -19,9 +19,9 @@ const GridLayout4 = ({ news }) => {
         </svg>
       </div>
       <div className="mainGrid  grid-cols-[1fr_2fr] ">
-        <div className="mainGridContent">
+        <div className="mainGridContent order-2 md:order-1 lg:order-1">
           <h2>{news.title}</h2>
-          <p className="text-[#313942] dark:text-[#E3E3E3]">
+          <p className="text-[#313942] dark:text-[#e3e3e3b8]">
             {news.description}
           </p>
           <Link
@@ -31,7 +31,13 @@ const GridLayout4 = ({ news }) => {
             See More
           </Link>
         </div>
-        <Image src={news.image_url} alt={news.title} width={500} height={300} />
+        <Image
+          src={news.image_url}
+          alt={news.title}
+          className="order-1 lg:order-2"
+          width={500}
+          height={300}
+        />
       </div>
     </div>
   );

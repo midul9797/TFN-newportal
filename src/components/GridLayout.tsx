@@ -23,7 +23,7 @@ const GridLayout = () => {
     <div className="parentGrid1 lg:mx-auto max-w-[1280px] mb-5">
       <div className="firstTwoCol">
         {/* Conditional row span for image height */}
-        <div className="grid gap-4">
+        <div className="firstCol">
           <Link href="" className="link">
             <div className={`firstColBox`}>
               <Image
@@ -34,7 +34,7 @@ const GridLayout = () => {
               />
               <div className="firstColBoxContent ">
                 <h2 className="">{news[0]?.title}</h2>
-                <p className="text-[#313942] dark:text-[#E3E3E3]">
+                <p className="text-[#313942] dark:text-[#e3e3e3b8]">
                   {news[0]?.description}
                 </p>
               </div>
@@ -50,7 +50,7 @@ const GridLayout = () => {
               />
               <div className="firstColBoxContent ">
                 <h2 className="">{news[1]?.title}</h2>
-                <p className="text-[#313942] dark:text-[#E3E3E3]">
+                <p className="text-[#313942] dark:text-[#e3e3e3b8]">
                   {news[1]?.description}
                 </p>
               </div>
@@ -67,7 +67,7 @@ const GridLayout = () => {
             />
 
             <h2 className="">{news[2]?.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news[2]?.description}
             </p>
           </div>
@@ -77,10 +77,10 @@ const GridLayout = () => {
         <Link href={""} className="link">
           <div className="thirdColBox">
             <h2 className="">{news[3]?.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news[3]?.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] py-3 ">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
               {news[3]?.source_name} |{" "}
               {news[3]?.category[0].charAt(0).toUpperCase()}
               {news[3]?.category[0].slice(1)}
@@ -90,10 +90,10 @@ const GridLayout = () => {
         <Link href="" className="link">
           <div className="thirdColBox">
             <h2 className="">{news[3]?.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news[3]?.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] py-3 ">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
               {news[3]?.source_name} |{" "}
               {news[3]?.category[0].charAt(0).toUpperCase()}
               {news[3]?.category[0].slice(1)}
@@ -103,10 +103,10 @@ const GridLayout = () => {
         <Link href="" className="link">
           <div className="thirdColBox">
             <h2 className="">{news[3]?.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news[3]?.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] py-3 ">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
               {news[3]?.source_name} |{" "}
               {news[3]?.category[0].charAt(0).toUpperCase()}
               {news[3]?.category[0].slice(1)}
@@ -116,10 +116,10 @@ const GridLayout = () => {
         <Link className="link" href={""}>
           <div className="thirdColBox">
             <h2 className="">{news[3]?.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news[3]?.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] py-3 ">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
               {news[3]?.source_name} |{" "}
               {news[3]?.category[0].charAt(0).toUpperCase()}
               {news[3]?.category[0].slice(1)}

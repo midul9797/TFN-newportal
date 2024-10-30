@@ -26,10 +26,10 @@ const GridLayout7 = ({ news }) => {
           />
           <div className="gridColContent7">
             <h2>{news.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] font-bold">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] ">
               {news.source_name} | {news.country}
             </p>
           </div>
@@ -43,10 +43,10 @@ const GridLayout7 = ({ news }) => {
           />
           <div className="gridColContent7">
             <h2>{news.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] font-bold">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] ">
               {news.source_name} | {news.country}
             </p>
           </div>
@@ -60,10 +60,10 @@ const GridLayout7 = ({ news }) => {
           />
           <div className="gridColContent7">
             <h2>{news.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] font-bold">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] ">
               {news.source_name} | {news.country}
             </p>
           </div>
@@ -77,10 +77,10 @@ const GridLayout7 = ({ news }) => {
           />
           <div className="gridColContent7">
             <h2>{news.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] font-bold">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] ">
               {news.source_name} | {news.country}
             </p>
           </div>
@@ -94,10 +94,10 @@ const GridLayout7 = ({ news }) => {
           />
           <div className="gridColContent7">
             <h2>{news.title}</h2>
-            <p className="text-[#313942] dark:text-[#E3E3E3]">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
               {news.description}
             </p>
-            <p className="text-[#313942] dark:text-[#E3E3E3] font-bold">
+            <p className="text-[#313942] dark:text-[#e3e3e3b8] ">
               {news.source_name} | {news.country}
             </p>
           </div>

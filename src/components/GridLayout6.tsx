@@ -26,7 +26,9 @@ const GridLayout6 = ({ news }) => {
           />
           <div className="gridColContent6">
             <h2>{news.title}</h2>
-            <p>{news.description}</p>
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
+              {news.description}
+            </p>
           </div>
         </div>
         <div className="gridCol6">
@@ -38,7 +40,9 @@ const GridLayout6 = ({ news }) => {
           />
           <div className="gridColContent6">
             <h2>{news.title}</h2>
-            <p>{news.description}</p>
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
+              {news.description}
+            </p>
           </div>
         </div>
         <div className="gridCol6">
@@ -50,7 +54,9 @@ const GridLayout6 = ({ news }) => {
           />
           <div className="gridColContent6">
             <h2>{news.title}</h2>
-            <p>{news.description}</p>
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
+              {news.description}
+            </p>
           </div>
         </div>
         <div className="gridCol6">
@@ -62,7 +68,9 @@ const GridLayout6 = ({ news }) => {
           />
           <div className="gridColContent6">
             <h2>{news.title}</h2>
-            <p>{news.description}</p>
+            <p className="text-[#313942] dark:text-[#e3e3e3b8]">
+              {news.description}
+            </p>
           </div>
         </div>
       </div>

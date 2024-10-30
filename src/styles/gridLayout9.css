@@ -1,0 +1,29 @@
+.parentGrid9 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -webkit-box-align: start;
+  align-items: start;
+  margin: 0px auto;
+  width: 100%;
+  max-width: 1280px;
+  gap: 16px;
+  padding: 0 16px;
+}
+.gridColContent9 {
+  border-bottom: none;
+  position: relative;
+  gap: 8px;
+  display: grid;
+}
+.gridColContent9 > h2 {
+  font-size: clamp(14px, 5vw, 18px);
+  line-height: clamp(18px, 5vw, 22px);
+  text-transform: none;
+  text-decoration: none;
+}
+.gridColContent9 > p {
+  font-size: clamp(10px, 5vw, 14px);
+  line-height: clamp(14px, 5vw, 18px);
+  text-transform: none;
+  text-decoration: none;
+}

@@ -1,0 +1,50 @@
+.parentGrid10 {
+  grid-template-columns: 1fr repeat(4, 1fr) repeat(3, 1fr);
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  position: relative;
+  display: grid;
+  gap: 16px;
+  margin: 0 auto;
+  max-width: 1038px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgb(230, 232, 234);
+}
+.parentGrid10:last-child {
+  border: none;
+}
+.firstCol10 {
+  -webkit-box-align: start;
+  align-items: start;
+  display: grid;
+}
+.parentGrid10 > img {
+  grid-column: 6/9;
+}
+.secondCol10 {
+  grid-column: 2/6;
+  display: grid;
+}
+.secondCol10 > h2 {
+  /*  */
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: none;
+  text-decoration: none;
+}
+.secondCol10 p {
+  /*  */
+  font-size: 14px;
+  line-height: 18px;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  max-height: calc(18px * 4);
+  width: 100%;
+}
+.secondCol10 p:first-child {
+  margin-bottom: 56px;
+}

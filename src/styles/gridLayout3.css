@@ -1,5 +1,4 @@
 .mainGrid {
-  /* grid-template-columns: 1fr 2fr; */
   position: relative;
   display: grid;
   gap: 0px;
@@ -7,13 +6,8 @@
   padding-bottom: 24px;
 }
 .mainGrid > img {
-  order: 0;
   position: relative;
   align-self: start;
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
 }
 .mainGridContent {
   align-content: center;
@@ -25,18 +19,22 @@
   grid-template-columns: subgrid;
 }
 .mainGridContent h2 {
-  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  font-size: 28px;
-  line-height: 32px;
+  font-size: clamp(20px, 5vw, 28px);
+  line-height: clamp(24px, 5vw, 32px);
   text-transform: none;
   text-decoration: none;
-  letter-spacing: -0.56px;
 }
 .mainGridContent p {
-  font-family: "BBC Reith Serif", Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  letter-spacing: 1px;
+  font-size: clamp(10px, 5vw, 14px);
+  line-height: clamp(14px, 5vw, 18px);
+}
+@media screen and (max-width: 599px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 849px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
