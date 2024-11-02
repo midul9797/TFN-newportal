@@ -29,6 +29,13 @@
 .gridColContent p {
   font-size: clamp(10px, 5vw, 14px);
   line-height: clamp(14px, 5vw, 18px);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  max-height: calc(18px * 4);
+  width: 100%;
+  text-overflow: ellipsis;
 }
 @media screen and (max-width: 599px) {
   .parentGrid5 {

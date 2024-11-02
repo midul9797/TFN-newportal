@@ -2,10 +2,9 @@
   grid-template-columns: 3fr 1fr;
   -webkit-box-align: start;
   align-items: start;
-  margin: 0px 16px;
   gap: 24px;
   display: grid;
-  padding: clamp(20px, 10vw, 32px) clamp(12px, 10vw, 48px);
+  /* padding: clamp(20px, 10vw, 32px) clamp(12px, 10vw, 48px); */
 }
 .firstGrid2 {
   grid-template-columns: 1fr 2fr;
@@ -43,7 +42,8 @@
 }
 .firstGridContent2 p,
 .secondGridContent2 p,
-.thirdGridContent2 p {
+.thirdGridContent2 p,
+.fourthGridContent2 p {
   font-size: clamp(10px, 5vw, 14px);
   line-height: clamp(14px, 5vw, 18px);
   margin-bottom: 4px;

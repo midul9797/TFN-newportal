@@ -53,3 +53,26 @@
   letter-spacing: 1px;
   margin-top: 48px;
 }
+
+@media screen and (min-width: 599px) and (max-width: 849px) {
+  .newsContainer {
+    padding: 0 16px;
+  }
+}
+@media screen and (max-width: 599px) {
+  .newsContainer > h2 {
+    font-size: 28px;
+    padding: 0 8px;
+  }
+  .newsContainer > p {
+    padding: 0 8px;
+  }
+  .saveShare {
+    margin-top: 24px;
+    margin-right: 8px;
+  }
+  .save,
+  .share {
+    font-size: 16px;
+  }
+}

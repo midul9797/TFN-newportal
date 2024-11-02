@@ -2,17 +2,19 @@
 
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const navbarItemStyle =
   "text-black dark:text-white text-base md:text-xs lg:text-base  relative w-fit block after:block after:content-[''] after:absolute after:h-[1.5px] after:bg-black dark:after:bg-white after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-
+  const router = useRouter();
   const toggleSearch = () => {
     setIsSearchVisible(!isSearchVisible);
   };
@@ -20,7 +22,8 @@ const Navbar = () => {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // Implement your search logic here
-    console.log("Searching for:", searchQuery);
+    router.push(`/search/${searchQuery}`);
+    setSearchQuery("");
   };
   const { setTheme } = useTheme();
   const toggleTheme = () => {
@@ -88,7 +91,19 @@ const Navbar = () => {
             aria-label={isSearchVisible ? "Close search" : "Open search"}
             className="bg-transparent border-none text-white cursor-pointer text-xl"
           >
-            {isSearchVisible ? "✕" : "🔍"}
+            {isSearchVisible ? (
+              "✕"
+            ) : (
+              <svg
+                viewBox="0 0 32 32"
+                width="20"
+                height="20"
+                aria-hidden="true"
+                className="fill-black dark:fill-white"
+              >
+                <path d="m30.6 28.1-8.3-8.3c1.5-2 2.4-4.4 2.4-7.2C24.7 6 19.6 1 13 1S1.4 6.1 1.4 12.7 6.5 24.3 13 24.3c2.3 0 4.4-.6 6.2-1.8l8.5 8.5 2.9-2.9zM4 12.6c0-5.2 3.9-9.1 9-9.1s9 3.9 9 9.1c0 5.2-3.9 9.1-9 9.1s-9-3.9-9-9.1z"></path>
+              </svg>
+            )}
           </button>
           <button
             onClick={toggleTheme}
@@ -130,34 +145,46 @@ const Navbar = () => {
 
         {/* Menu Items */}
         <div className="hidden min-[780px]:flex md:space-x-2 lg:space-x-4 items-center">
-          <a href="#features" className={navbarItemStyle}>
-            Politics
-          </a>
+          <Link href="/" className={navbarItemStyle}>
+            Home
+          </Link>
+          <Link href="/category/world" className={navbarItemStyle}>
+            World
+          </Link>
 
-          <Link href="/customization" className={navbarItemStyle}>
+          <Link href="/category/sports" className={navbarItemStyle}>
             Sports
           </Link>
-          <a href="#faq" className={navbarItemStyle}>
+          <Link href="/category/business" className={navbarItemStyle}>
             Business
-          </a>
-          <a href="#faq" className={navbarItemStyle}>
+          </Link>
+          <Link href="/category/technology" className={navbarItemStyle}>
             Technology
-          </a>
-          <a href="#faq" className={navbarItemStyle}>
+          </Link>
+          <Link href="/category/entertainment" className={navbarItemStyle}>
             Entertainment
-          </a>
-          <a href="#faq" className={navbarItemStyle}>
-            Science
-          </a>
-          <a href="#faq" className={navbarItemStyle}>
+          </Link>
+          <Link href="/category/other" className={navbarItemStyle}>
             Other
-          </a>
+          </Link>
           <button
             onClick={toggleSearch}
             aria-label={isSearchVisible ? "Close search" : "Open search"}
-            className="bg-transparent border-none text-white cursor-pointer text-xl"
+            className="bg-transparent border-none text-black dark:text-white cursor-pointer text-xl"
           >
-            {isSearchVisible ? "✕" : "🔍"}
+            {isSearchVisible ? (
+              "✕"
+            ) : (
+              <svg
+                viewBox="0 0 32 32"
+                width="20"
+                height="20"
+                aria-hidden="true"
+                className="fill-black dark:fill-white"
+              >
+                <path d="m30.6 28.1-8.3-8.3c1.5-2 2.4-4.4 2.4-7.2C24.7 6 19.6 1 13 1S1.4 6.1 1.4 12.7 6.5 24.3 13 24.3c2.3 0 4.4-.6 6.2-1.8l8.5 8.5 2.9-2.9zM4 12.6c0-5.2 3.9-9.1 9-9.1s9 3.9 9 9.1c0 5.2-3.9 9.1-9 9.1s-9-3.9-9-9.1z"></path>
+              </svg>
+            )}
           </button>
           <button
             onClick={toggleTheme}
@@ -195,7 +222,7 @@ const Navbar = () => {
             )}
           </button>
           {/* Call-to-Action Button */}
-          <Link
+          {/* <Link
             href="#cta"
             className=" bg-white dark:bg-black text-base md:text-xs lg:text-base  border-black dark:border-white  border-solid border-2 text-black dark:text-white px-4 py-2 mt-2 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition duration-300"
           >
@@ -206,7 +233,7 @@ const Navbar = () => {
             className=" bg-white dark:bg-black text-base md:text-xs lg:text-base border-black dark:border-white  border-solid border-2 text-black dark:text-white px-4 py-2 mt-2 hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition duration-300"
           >
             Register
-          </Link>
+          </Link> */}
         </div>
       </div>
 
@@ -214,10 +241,10 @@ const Navbar = () => {
       <div
         className={`min-[780px]:hidden ${
           isOpen ? "block" : "hidden"
-        } bg-white shadow-lg font-bold`}
+        } bg-white dark:bg-black shadow-lg font-bold`}
       >
         {/* Mobile CTA Button */}
-        <div className="flex w-[60%] mx-auto  justify-around space-y-2 mb-2">
+        {/* <div className="flex w-[60%] mx-auto  justify-around space-y-2 mb-2">
           <Link
             href="#cta"
             className=" bg-white dark:bg-black  border-black dark:border-white  border-solid border-2 text-black dark:text-white px-4 py-2 mt-2 rounded hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black transition duration-300"
@@ -230,38 +257,51 @@ const Navbar = () => {
           >
             Register
           </Link>
-        </div>
-        <a href="#features" className={` mx-auto py-2 ${navbarItemStyle}`}>
-          Politics
-        </a>
+        </div> */}
+        <Link href="/" className={`mx-auto py-2  ${navbarItemStyle}`}>
+          Home
+        </Link>
         <Link
-          href="/customization"
-          className={` mx-auto py-2 ${navbarItemStyle}`}
+          href="/category/world"
+          className={`mx-auto py-2  ${navbarItemStyle}`}
+        >
+          World
+        </Link>
+
+        <Link
+          href="/category/sports"
+          className={`mx-auto py-2  ${navbarItemStyle}`}
         >
           Sports
         </Link>
-
-        <a href="#faq" className={` mx-auto py-2 ${navbarItemStyle}`}>
+        <Link
+          href="/category/business"
+          className={`mx-auto py-2  ${navbarItemStyle}`}
+        >
           Business
-        </a>
-        <a href="#faq" className={` mx-auto py-2 ${navbarItemStyle}`}>
-          Entertainment
-        </a>
-        <a href="#faq" className={` mx-auto py-2 ${navbarItemStyle}`}>
+        </Link>
+        <Link
+          href="/category/technology"
+          className={`mx-auto py-2  ${navbarItemStyle}`}
+        >
           Technology
-        </a>
-        <a href="#faq" className={` mx-auto py-2 ${navbarItemStyle}`}>
-          Science
-        </a>
-        <a href="#faq" className={` mx-auto py-2 ${navbarItemStyle}`}>
+        </Link>
+        <Link
+          href="/category/entertainment"
+          className={`mx-auto py-2  ${navbarItemStyle}`}
+        >
+          Entertainment
+        </Link>
+        <Link
+          href="/category/other"
+          className={`mx-auto py-2  ${navbarItemStyle}`}
+        >
           Other
-        </a>
+        </Link>
       </div>
       <div
-        className={`bg-gray-100 p-4 transition-all duration-300 ease-in-out ${
-          isSearchVisible
-            ? "max-h-20 opacity-100"
-            : "max-h-0 opacity-0 overflow-hidden"
+        className={`bg-gray-100 dark:bg-[#0c0b09] p-4 transition-all duration-300 ease-in-out ${
+          isSearchVisible ? "max-h-20 block" : "max-h-0 hidden overflow-hidden"
         }`}
       >
         <div className="container mx-auto">
@@ -273,18 +313,22 @@ const Navbar = () => {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 aria-label="Search"
-                className="w-full py-2 pl-8 pr-2 rounded-md border border-gray-300 text-base"
+                className="w-full py-2 pl-8 pr-2 rounded-md border border-gray-300  text-base"
               />
-              <span className="absolute left-2 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                🔍
-              </span>
             </div>
             <button
               type="submit"
               aria-label="Submit search"
-              className="bg-blue-600 text-white p-2 rounded-md text-xl flex items-center justify-center hover:bg-blue-700 transition-colors duration-200"
+              className="  p-2 rounded-md text-xl flex items-center justify-center hover:bg-gray-200 dark:hover:bg-[#1a1814]  transition-colors duration-200"
             >
-              🔍
+              <svg
+                viewBox="0 0 32 32"
+                width="20"
+                height="20"
+                className="fill-black dark:fill-white"
+              >
+                <path d="m30.6 28.1-8.3-8.3c1.5-2 2.4-4.4 2.4-7.2C24.7 6 19.6 1 13 1S1.4 6.1 1.4 12.7 6.5 24.3 13 24.3c2.3 0 4.4-.6 6.2-1.8l8.5 8.5 2.9-2.9zM4 12.6c0-5.2 3.9-9.1 9-9.1s9 3.9 9 9.1c0 5.2-3.9 9.1-9 9.1s-9-3.9-9-9.1z"></path>
+              </svg>
             </button>
           </form>
         </div>

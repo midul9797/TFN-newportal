@@ -1,15 +1,68 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import "../styles/singleNews.css";
-import Link from "next/link";
+
+import Modal from "./Modal";
 const SingleNews = ({ news }) => {
+  news = news[0];
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [summary, setSummary] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    generateSummary();
+  };
+  const closeModal = () => setIsModalOpen(false);
+  const generateSummary = async () => {
+    if (summary === "") {
+      try {
+        // Fetch the response from the OpenAI API with the signal from AbortController
+        const response = await fetch(`/api/generate`, {
+          method: "POST",
+          headers: { "Content-type": "application/json" },
+          body: JSON.stringify({
+            body: `${news.content}.Summarize it in 5-8 lines`,
+          }),
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          setSummary(data.output);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    } else setIsLoading(false);
+  };
   return (
-    <div className="newsContainer">
+    <div className="newsContainer ">
       <h2 className="newsTitle">{news.title}</h2>
       <div className="subDetails">
         <p>{news.pubDate}</p>
         <div className="saveShare">
-          <a href="#">
+          <button
+            onClick={openModal}
+            className="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-xs px-4 py-2 text-center me-2 "
+          >
+            AI Summary
+          </button>
+
+          <Modal
+            isOpen={isModalOpen}
+            onClose={closeModal}
+            title="AI-Generated Summary"
+          >
+            <div className="space-y-4">
+              {isLoading ? (
+                <p>Generating...</p>
+              ) : (
+                <p className="text-gray-700">{summary}</p>
+              )}
+            </div>
+          </Modal>
+          {/* <a href="#">
             <div className="save">
               Save{" "}
               <span>
@@ -24,7 +77,7 @@ const SingleNews = ({ news }) => {
                 </svg>
               </span>
             </div>
-          </a>
+          </a> */}
           <a href="#">
             <div className="share">
               Share{" "}
@@ -49,6 +102,7 @@ const SingleNews = ({ news }) => {
         </div>
       </div>
       <Image src={news.image_url} alt={news.title} width={500} height={300} />
+
       <p>
         {news.content.split("").map((char: string, idx: number) =>
           char === "." ? (

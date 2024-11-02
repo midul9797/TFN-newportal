@@ -1,30 +1,32 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "../styles/gridLayout.css";
-import * as news from "../../public/data.json";
 import Link from "next/link";
-const GridLayout = () => {
-  //   const [news, setNews] = useState();
-  //   const [loading, setLoading] = useState(true);
-  //   useEffect(() => {
-  //     const getNews = async () => {
-  //       const res = await fetch(
-  //         "https://newsdata.io/api/1/latest?apikey=pub_57418e66c1b1fe4264ed1b056fcb08161669b&category=sports"
-  //       );
-  //       const data = await res.json();
-  //       console.log(data);
-  //       setNews(data?.results);
-  //       setLoading(false);
-  //     };
-  //     getNews();
-  //   }, []);
-  //   if (loading) return <p>Loading...</p>;
+const GridLayout = ({ news }) => {
+  // const [news, setNews] = useState();
+  // const [loading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   const getNews = async () => {
+  //     const res = await fetch(
+  //       "https://newsdata.io/api/1/latest?apikey=pub_57418e66c1b1fe4264ed1b056fcb08161669b&category=sports"
+  //     );
+  //     const data = await res.json();
+  //     console.log(data?.results);
+  //     // setNews(data?.results);
+  //     setLoading(false);
+  //   };
+  //   getNews();
+  // }, []);
+  // if (loading) return <p>Loading...</p>;
   return (
     <div className="parentGrid1 lg:mx-auto max-w-[1280px] mb-5">
       <div className="firstTwoCol">
         {/* Conditional row span for image height */}
         <div className="firstCol">
-          <Link href="" className="link">
+          <Link
+            href={`/category/${news[0].category}/${news[0].article_id}`}
+            className="link"
+          >
             <div className={`firstColBox`}>
               <Image
                 src={news[0]?.image_url || ""}
@@ -40,7 +42,10 @@ const GridLayout = () => {
               </div>
             </div>
           </Link>
-          <Link href={"/"} className="link">
+          <Link
+            href={`/category/${news[1].category}/${news[1].article_id}`}
+            className="link"
+          >
             <div className={`firstColBox`}>
               <Image
                 src={news[1]?.image_url || ""}
@@ -57,7 +62,10 @@ const GridLayout = () => {
             </div>
           </Link>
         </div>
-        <Link href={""} className="link">
+        <Link
+          href={`/category/${news[2].category}/${news[2].article_id}`}
+          className="link"
+        >
           <div className="secondColBox">
             <Image
               src={news[2]?.image_url || ""}
@@ -74,7 +82,10 @@ const GridLayout = () => {
         </Link>
       </div>
       <div className="thirdCol">
-        <Link href={""} className="link">
+        <Link
+          href={`/category/${news[3].category}/${news[3].article_id}`}
+          className="link"
+        >
           <div className="thirdColBox">
             <h2 className="">{news[3]?.title}</h2>
             <p className="text-[#313942] dark:text-[#e3e3e3b8]">
@@ -87,42 +98,51 @@ const GridLayout = () => {
             </p>
           </div>
         </Link>
-        <Link href="" className="link">
+        <Link
+          href={`/category/${news[4].category}/${news[4].article_id}`}
+          className="link"
+        >
           <div className="thirdColBox">
-            <h2 className="">{news[3]?.title}</h2>
+            <h2 className="">{news[4]?.title}</h2>
             <p className="text-[#313942] dark:text-[#e3e3e3b8]">
-              {news[3]?.description}
+              {news[4]?.description}
             </p>
             <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
-              {news[3]?.source_name} |{" "}
-              {news[3]?.category[0].charAt(0).toUpperCase()}
-              {news[3]?.category[0].slice(1)}
+              {news[4]?.source_name} |{" "}
+              {news[4]?.category[0].charAt(0).toUpperCase()}
+              {news[4]?.category[0].slice(1)}
             </p>
           </div>
         </Link>
-        <Link href="" className="link">
+        <Link
+          href={`/category/${news[5].category}/${news[5].article_id}`}
+          className="link"
+        >
           <div className="thirdColBox">
-            <h2 className="">{news[3]?.title}</h2>
+            <h2 className="">{news[5]?.title}</h2>
             <p className="text-[#313942] dark:text-[#e3e3e3b8]">
-              {news[3]?.description}
+              {news[5]?.description}
             </p>
             <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
-              {news[3]?.source_name} |{" "}
-              {news[3]?.category[0].charAt(0).toUpperCase()}
-              {news[3]?.category[0].slice(1)}
+              {news[5]?.source_name} |{" "}
+              {news[5]?.category[0].charAt(0).toUpperCase()}
+              {news[5]?.category[0].slice(1)}
             </p>
           </div>
         </Link>
-        <Link className="link" href={""}>
+        <Link
+          className="link"
+          href={`/category/${news[6].category}/${news[6].article_id}`}
+        >
           <div className="thirdColBox">
-            <h2 className="">{news[3]?.title}</h2>
+            <h2 className="">{news[6]?.title}</h2>
             <p className="text-[#313942] dark:text-[#e3e3e3b8]">
-              {news[3]?.description}
+              {news[6]?.description}
             </p>
             <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
-              {news[3]?.source_name} |{" "}
-              {news[3]?.category[0].charAt(0).toUpperCase()}
-              {news[3]?.category[0].slice(1)}
+              {news[6]?.source_name} |{" "}
+              {news[6]?.category[0].charAt(0).toUpperCase()}
+              {news[6]?.category[0].slice(1)}
             </p>
           </div>
         </Link>

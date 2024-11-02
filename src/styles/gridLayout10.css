@@ -48,3 +48,21 @@
 .secondCol10 p:first-child {
   margin-bottom: 56px;
 }
+@media screen and (max-width: 599px) {
+  .parentGrid10 {
+    grid-template-columns: 1fr;
+  }
+  .parentGrid10 > img {
+    grid-column: 1/-1;
+    order: 1;
+  }
+  .firstCol10 {
+    order: 3;
+    padding: 0 8px;
+  }
+  .secondCol10 {
+    grid-column: 1/-1;
+    order: 2;
+    padding: 0 8px;
+  }
+}
