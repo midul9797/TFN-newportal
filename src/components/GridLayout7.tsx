@@ -2,12 +2,13 @@ import Image from "next/image";
 import React from "react";
 import "../styles/gridLayout7.css";
 import Link from "next/link";
+import { postTime } from "@/helpers/PostTime";
 const GridLayout7 = ({ news, border = false }) => {
   return (
     <>
       {border && (
         <div className="mb-5 lg:mx-auto max-w-[1280px] border-t-4 border-solid border-black dark:border-white">
-          <Link href={`/category/${news.category}`}>
+          <Link href={`/category/${news[0].category}`}>
             <div className="topLeftTitle">
               <h2>{news[0].category.toUpperCase()} </h2>
               <svg
@@ -42,7 +43,9 @@ const GridLayout7 = ({ news, border = false }) => {
                 {content.description}
               </p>
               <p className="text-[#313942] dark:text-[#e3e3e3b8] ">
-                {content.source_name} | {content.country}
+                {postTime(content?.pubDate)} |{" "}
+                {content?.category.charAt(0).toUpperCase()}
+                {content?.category.slice(1)}
               </p>
             </div>
           </Link>

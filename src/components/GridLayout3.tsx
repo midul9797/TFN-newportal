@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import "../styles/gridLayout3.css";
 
-const GridLayout3 = ({ news, border }: { border: boolean }) => {
+const GridLayout3 = ({ news, border }) => {
   return (
     <>
       {border && (

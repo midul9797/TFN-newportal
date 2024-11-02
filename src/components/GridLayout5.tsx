@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import "../styles/gridLayout5.css";
 import Link from "next/link";
+import { postTime } from "@/helpers/PostTime";
 const GridLayout5 = ({ news, border = false }) => {
   return (
     <>
@@ -42,7 +43,9 @@ const GridLayout5 = ({ news, border = false }) => {
                 {content.description}
               </p>
               <p>
-                {content.source_id} | {content.country}
+                {postTime(content?.pubDate)} |{" "}
+                {content?.category.charAt(0).toUpperCase()}
+                {content?.category.slice(1)}
               </p>
             </div>
           </Link>

@@ -7,7 +7,6 @@ import GridLayout4 from "@/components/GridLayout4";
 import GridLayout5 from "@/components/GridLayout5";
 import GridLayout6 from "@/components/GridLayout6";
 import news from "../../public/main.json";
-import GridLayout7 from "@/components/GridLayout7";
 export default function Home() {
   const gridLayout1News = news
     .filter((content) => content.category === "world")

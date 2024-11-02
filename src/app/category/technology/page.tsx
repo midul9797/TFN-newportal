@@ -9,7 +9,7 @@ const Technology = () => {
   const techNews = news.filter((content) => content.category === "technology");
   return (
     <>
-      <GridLayout3 news={techNews[0]} />
+      <GridLayout3 news={techNews[0]} border={false} />
       <GridLayout6 news={techNews} border />
       <GridLayout4 border news={techNews[1]} />
       <GridLayout5 border news={[techNews[2], techNews[3]]} />

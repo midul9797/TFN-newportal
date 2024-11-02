@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import "../styles/singleNews.css";
 
 import Modal from "./Modal";
+import { postTime } from "@/helpers/PostTime";
 const SingleNews = ({ news }) => {
   news = news[0];
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,7 +41,9 @@ const SingleNews = ({ news }) => {
     <div className="newsContainer ">
       <h2 className="newsTitle">{news.title}</h2>
       <div className="subDetails">
-        <p>{news.pubDate}</p>
+        <p className="text-[#313942] dark:text-[#e3e3e3b8]">
+          {postTime(news.pubDate)}
+        </p>
         <div className="saveShare">
           <button
             onClick={openModal}

@@ -1,4 +1,4 @@
-"use strict";
+"use client";
 import SingleNewsFullPage from "@/components/SingleNewsFullPage";
 import React from "react";
 

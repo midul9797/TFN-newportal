@@ -2,7 +2,6 @@ import GridLayout from "@/components/GridLayout";
 import GridLayout10 from "@/components/GridLayout10";
 import GridLayout4 from "@/components/GridLayout4";
 import GridLayout6 from "@/components/GridLayout6";
-import GridLayout7 from "@/components/GridLayout7";
 import React from "react";
 import news from "../../../../public/main.json";
 import GridLayout3 from "@/components/GridLayout3";

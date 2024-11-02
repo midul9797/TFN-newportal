@@ -11,7 +11,6 @@ const navbarItemStyle =
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [shadow, setShadow] = useState(false);
-  const [darkMode, setDarkMode] = useState(false);
   const [isSearchVisible, setIsSearchVisible] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
@@ -21,17 +20,15 @@ const Navbar = () => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement your search logic here
     router.push(`/search/${searchQuery}`);
     setSearchQuery("");
   };
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    setTheme(darkMode ? "dark" : "light");
+    setTheme(theme === "light" ? "dark" : "light");
   };
+
   useEffect(() => {
-    setTheme("light");
     const handleScroll = () => {
       if (window.scrollY > 0) {
         setShadow(true);
@@ -89,7 +86,7 @@ const Navbar = () => {
           <button
             onClick={toggleSearch}
             aria-label={isSearchVisible ? "Close search" : "Open search"}
-            className="bg-transparent border-none text-white cursor-pointer text-xl"
+            className="bg-transparent border-none text-black dark:text-white cursor-pointer text-xl"
           >
             {isSearchVisible ? (
               "✕"
@@ -109,7 +106,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`p-2 rounded-full transition-colors`}
           >
-            {!darkMode ? (
+            {theme === "light" ? (
               <svg
                 className="fill-yellow-400"
                 fill="currentColor"
@@ -190,7 +187,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`p-2 rounded-full transition-colors`}
           >
-            {!darkMode ? (
+            {theme === "light" ? (
               <svg
                 className="fill-yellow-400"
                 fill="currentColor"

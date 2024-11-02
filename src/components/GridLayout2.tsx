@@ -1,15 +1,8 @@
 import Image from "next/image";
 import "../styles/gridLayout2.css";
 import Link from "next/link";
-const GridLayout2 = ({
-  border,
-  topLeftTitle = "",
-  news,
-}: {
-  border: boolean;
-  topLeftTitle: string;
-  news: any;
-}) => {
+import { postTime } from "@/helpers/PostTime";
+const GridLayout2 = ({ border, topLeftTitle = "", news }) => {
   return (
     <>
       {border && (
@@ -45,7 +38,9 @@ const GridLayout2 = ({
               {news[0].description}
             </p>
             <p className="pb-4">
-              {news[0].source_name} | {news[0].creator}
+              {postTime(news[0]?.pubDate)} |{" "}
+              {news[0]?.category[0].charAt(0).toUpperCase()}
+              {news[0]?.category.slice(1)}
             </p>
           </div>
         </Link>
@@ -65,7 +60,9 @@ const GridLayout2 = ({
               {news[1].description}
             </p>
             <p className="pb-4">
-              {news[1].source_name} | {news[1].creator}
+              {postTime(news[1]?.pubDate)} |{" "}
+              {news[1]?.category[0].charAt(0).toUpperCase()}
+              {news[1]?.category.slice(1)}
             </p>
           </div>
         </Link>
@@ -86,7 +83,9 @@ const GridLayout2 = ({
                 {news[5].description}
               </p>
               <p className="pb-4">
-                {news[5].source_name} | {news[5].creator}
+                {postTime(news[5]?.pubDate)} |{" "}
+                {news[5]?.category[0].charAt(0).toUpperCase()}
+                {news[5]?.category.slice(1)}
               </p>
             </div>
           </Link>
@@ -106,7 +105,9 @@ const GridLayout2 = ({
                 {news[2].description}
               </p>
               <p className="pb-4">
-                {news[2].source_name} | {news[2].creator}
+                {postTime(news[2]?.pubDate)} |{" "}
+                {news[2]?.category[0].charAt(0).toUpperCase()}
+                {news[2]?.category.slice(1)}
               </p>
             </div>
           </Link>
@@ -126,7 +127,9 @@ const GridLayout2 = ({
                 {news[3].description}
               </p>
               <p className="pb-4">
-                {news[3].source_name} | {news[3].creator}
+                {postTime(news[3]?.pubDate)} |{" "}
+                {news[3]?.category[0].charAt(0).toUpperCase()}
+                {news[3]?.category.slice(1)}
               </p>
             </div>
           </Link>
@@ -146,7 +149,9 @@ const GridLayout2 = ({
                 {news[4].description}
               </p>
               <p className="pb-4">
-                {news[4].source_name} | {news[4].creator}
+                {postTime(news[4]?.pubDate)} |{" "}
+                {news[4]?.category[0].charAt(0).toUpperCase()}
+                {news[4]?.category.slice(1)}
               </p>
             </div>
           </Link>
@@ -161,7 +166,9 @@ const GridLayout2 = ({
               {news[6].description}
             </p>
             <p className="pb-4">
-              {news[6].source_name} | {news[6].creator}
+              {postTime(news[6]?.pubDate)} |{" "}
+              {news[6]?.category[0].charAt(0).toUpperCase()}
+              {news[6]?.category.slice(1)}
             </p>
           </Link>
           <Link
@@ -173,7 +180,9 @@ const GridLayout2 = ({
               {news[7].description}
             </p>
             <p className="pb-4">
-              {news[7].source_name} | {news[7].creator}
+              {postTime(news[7]?.pubDate)} |{" "}
+              {news[7]?.category.charAt(0).toUpperCase()}
+              {news[7]?.category.slice(1)}
             </p>
           </Link>
         </div>

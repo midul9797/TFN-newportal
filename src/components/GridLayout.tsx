@@ -2,7 +2,9 @@ import Image from "next/image";
 import React from "react";
 import "../styles/gridLayout.css";
 import Link from "next/link";
+import { postTime } from "@/helpers/PostTime";
 const GridLayout = ({ news }) => {
+  console.log(postTime(news[0].pubDate));
   // const [news, setNews] = useState();
   // const [loading, setLoading] = useState(true);
   // useEffect(() => {
@@ -92,7 +94,7 @@ const GridLayout = ({ news }) => {
               {news[3]?.description}
             </p>
             <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
-              {news[3]?.source_name} |{" "}
+              {postTime(news[3]?.pubDate)} |{" "}
               {news[3]?.category[0].charAt(0).toUpperCase()}
               {news[3]?.category[0].slice(1)}
             </p>
@@ -108,7 +110,7 @@ const GridLayout = ({ news }) => {
               {news[4]?.description}
             </p>
             <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
-              {news[4]?.source_name} |{" "}
+              {postTime(news[4]?.pubDate)} |{" "}
               {news[4]?.category[0].charAt(0).toUpperCase()}
               {news[4]?.category[0].slice(1)}
             </p>
@@ -124,7 +126,7 @@ const GridLayout = ({ news }) => {
               {news[5]?.description}
             </p>
             <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
-              {news[5]?.source_name} |{" "}
+              {postTime(news[5]?.pubDate)} |{" "}
               {news[5]?.category[0].charAt(0).toUpperCase()}
               {news[5]?.category[0].slice(1)}
             </p>
@@ -140,9 +142,9 @@ const GridLayout = ({ news }) => {
               {news[6]?.description}
             </p>
             <p className="text-[#313942] dark:text-[#e3e3e3b8] py-3 ">
-              {news[6]?.source_name} |{" "}
-              {news[6]?.category[0].charAt(0).toUpperCase()}
-              {news[6]?.category[0].slice(1)}
+              {postTime(news[6]?.pubDate)} |{" "}
+              {news[6]?.category.charAt(0).toUpperCase()}
+              {news[6]?.category.slice(1)}
             </p>
           </div>
         </Link>
